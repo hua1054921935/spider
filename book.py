@@ -23,7 +23,7 @@ class Book():
             href = chapter.xpath('./a/@href')[0]
             chapter_name = chapter.xpath('./a/text()')[0]
             content = self.get_chapter_content(href)
-            with open(book_name[0] + '.txt', 'a') as f:
+            with open(book_name[0] + '.txt', 'a', encoding='gb18030', errors='ignore') as f:
                 f.write(chapter_name + '\r\n')
                 for data in content:
                     f.write(data + '\r\n')
@@ -31,7 +31,7 @@ class Book():
 
     def get_chapter_content(self, url):
         response = requests.get(url, headers=self.headers)
-        html = response.content.decode('gbk')
+        html = response.content.decode('gbk', errors='ignore')
         data = etree.HTML(html)
         content = data.xpath('//div[@class="content"]/text()')
         return content
