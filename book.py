@@ -61,10 +61,3 @@ if __name__ == '__main__':
     name = input('请输入书名：')
     spider = Book(name)
     spider.run()
-#
-#
-#
-#
-# headers={'User-Agent':'Mozilla/5.0 (Windows NT 6.3; Win64; x64)' 'AppleWebKit/537.36 (KHTML, like Gecko)' 'Chrome/63.0.3239.84 Safari/537.36','X-CSRFToken':'9303a1f4b25e8f2f68d89b1d0e9cf615','Referer':'http://neihanshequ.com/bar/1/','Cookie':'uuid="w:99d7c4dc60eb4ae09556c6bc9dc6d253"; tt_webid=6529659478042854919; csrftoken=13753cb398583c33da5be8bf0f7727f7; _ga=GA1.2.1382869523.1520304821; _gid=GA1.2.1200588661.1520422263'}
-# response = requests.get(url, headers=headers)
-# html = response.content.decode('gbk')
